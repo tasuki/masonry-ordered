@@ -1,6 +1,6 @@
 // JQuery Masonry Sorted plugin
 // Depends on: http://masonry.desandro.com/
-( function( window, $ ) {
+(function( window, $, undefined ) {
   // layout logic
   $.Mason.prototype._placeBrick = function( brick ) {
     var $brick = $(brick),
