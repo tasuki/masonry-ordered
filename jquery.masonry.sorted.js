@@ -1,6 +1,9 @@
 // JQuery Masonry Sorted plugin
 // Depends on: http://masonry.desandro.com/
 (function( window, $, undefined ) {
+
+  $.Mason.settings.distanceBadnessWeight = 50;
+
   // layout logic
   $.Mason.prototype._placeBrick = function( brick ) {
     var $brick = $(brick),
@@ -68,8 +71,11 @@
       // vertical distance from the most top available spot
       var heightBadness = groupY[i] - minimumY;
 
-      // total badness for column
-      badness[i] = distanceBadness + heightBadness;
+      // TODO name this better!
+      var dbw = this.options.distanceBadnessWeight / 100;
+      var hbw = 1 - dbw;
+      // total badness for column // TODO the 3 is really arbitrary
+      badness[i] = dbw * distanceBadness + 3 * hbw * heightBadness;
     }
 
     // get minimum badness
