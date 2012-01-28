@@ -51,8 +51,8 @@
       anchorPoint.top = prevBrick.style.top;
 
       // brick doesn't fit in row (anchor + new brick width > container width)
-      var container_width = this.element.outerWidth(true);
-      if ( anchorPoint[ dir ] + $brick.outerWidth(true) > container_width ) {
+      var container_width = this.element.width();
+      if ( anchorPoint[ dir ] + colSpan * this.columnWidth > container_width ) {
         // reset horizontal position
         anchorPoint[ dir ] = 0;
       }
