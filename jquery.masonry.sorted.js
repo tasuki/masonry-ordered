@@ -2,7 +2,18 @@
 // Depends on: http://masonry.desandro.com/
 (function( window, $, undefined ) {
 
-  $.Mason.settings.distanceBadnessWeight = 50;
+  $.extend(true, $.Mason.settings, {
+    layoutPriorities: {
+      // Masonry default: Try to occupy highest available position.
+      // Weight: Pixels of vertical distance from most upper spot.
+      upperPosition: 1,
+      // Shelf order: Try to display bricks in original order.
+      //   (increases ordered-ness, decreases space-efficiency)
+      // Weight: Pixels of distance of current brick's top left corner
+      //         from previous brick's top right corner.
+      shelfOrder: 1
+    }
+  });
 
   // layout logic
   $.Mason.prototype._placeBrick = function( brick ) {
@@ -59,32 +70,33 @@
       }
     }
 
-    var badness = [];
+    // priorities weights for brick laying
+    var priorities = this.options.layoutPriorities;
+    // total penalty for given position
+    var penalty = [];
 
-    // count badness of each column
+    // calculate penalty of each position
     for ( var i=0, len = groupY.length; i < len; i++ ) {
-      // actual distance from anchor point
-      var width  = Math.abs( anchorPoint[ dir ] - this.columnWidth * i );
-      var height = Math.abs( anchorPoint.top  - groupY[i] );
-      var sum_of_powers = Math.pow( width, 2 ) + Math.pow( height, 2 );
-      var distanceBadness = Math.round( Math.sqrt( sum_of_powers ) );
+      // distance of upper left corner from anchor point
+      var horizontal = Math.abs( anchorPoint[ dir ] - this.columnWidth * i );
+      var vertical   = Math.abs( anchorPoint.top  - groupY[i] );
+      var sum_of_powers = Math.pow( horizontal, 2 ) + Math.pow( vertical, 2 );
+      var distance      = Math.round( Math.sqrt( sum_of_powers ) );
+      var shelfPenalty  = priorities.shelfOrder * distance;
 
       // vertical distance from the most top available spot
-      var heightBadness = groupY[i] - minimumY;
+      var upperPenalty = priorities.upperPosition * ( groupY[i] - minimumY );
 
-      // TODO name this better!
-      var dbw = this.options.distanceBadnessWeight / 100;
-      var hbw = 1 - dbw;
-      // total badness for column
-      badness[i] = dbw * distanceBadness + hbw * heightBadness;
+      // total penalty for column
+      penalty[i] = upperPenalty + shelfPenalty;
     }
 
-    // get minimum badness
-    var minBadness = Math.min.apply( null, badness );
+    // get minimum penalty
+    var minPenalty = Math.min.apply( null, penalty );
 
-    // find column with minimum badness
-    for ( i=0, len = badness.length; i < len; i++ ) {
-      if ( badness[i] === minBadness ) {
+    // find column with minimum penalty
+    for ( i=0, len = penalty.length; i < len; i++ ) {
+      if ( penalty[i] === minPenalty ) {
         shortCol = i;
         break;
       }
