@@ -74,8 +74,8 @@
       // TODO name this better!
       var dbw = this.options.distanceBadnessWeight / 100;
       var hbw = 1 - dbw;
-      // total badness for column // TODO the 3 is really arbitrary
-      badness[i] = dbw * distanceBadness + 3 * hbw * heightBadness;
+      // total badness for column
+      badness[i] = dbw * distanceBadness + hbw * heightBadness;
     }
 
     // get minimum badness
