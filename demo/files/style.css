@@ -1,0 +1,11 @@
+* { margin: 0; padding: 0; }
+.clear { clear: both; }
+
+body { background: #BBB; color: #FFF; font-family: Verdana, sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; padding: 20px; }
+
+#images { background: #CCC; position: relative; }
+#images .anchorpoint { position: absolute; height: 1px; width: 1px; border: 1px solid red; }
+.pic { float: left; padding: 5px; position: relative; }
+.pic img { border: 5px solid #FFF; display: block; }
+
+#slider { float: right; margin: 10px; width: 300px; font-size: 13px; }
