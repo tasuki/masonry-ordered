@@ -72,6 +72,7 @@ mini_bricks:
 <div class="item link"><a href="{{ root_path }}jquery.masonry.ordered.js">
 	<strong>Download</strong> the jquery.&#8203;masonry.&#8203;ordered.js script
 </a></div>
+
 <div class="item link"><a href="http://github.com/tasuk/masonry-ordered">
 	jQuery Masonry Ordered on <strong>github</strong>:<br/>
 	&ndash; browse the code<br/>
@@ -105,7 +106,10 @@ mini_bricks:
 		$('#content').masonry({
 			itemSelector: '.item',
 			isAnimated: true,
-			columnWidth: 240
+			columnWidth: 240,
+			layoutPriorities: {
+				shelfOrder: 0
+			}
 		});
 	});
 </script>
