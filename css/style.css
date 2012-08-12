@@ -2,18 +2,27 @@
 .clear { clear: both; }
 
 body { background: #553; color: #FFD; font-family: Ubuntu, Helvetica, Arial, sans-serif; font-size: 16px; padding: 10px; }
+a { color: #D17; }
+a:hover { text-decoration: none; }
 
-h1 { color: #199; font-size: 20px; margin-bottom: 5px; }
+h1, #content.docs h2, #content.docs h3 { color: #199; margin-bottom: 10px; }
+blockquote { border-left: 2px solid #553; font-size: 10px; padding: 0px 5px; }
+p { margin: 5px 0px; }
 .left { float: left; }
 .right { float: right; }
 .padmore { padding: 10px; }
 
 #navigation { position: absolute; width: 180px; }
+#navigation h1 { font-size: 20px; margin-top: 25px; }
 #navigation li { list-style-type: none; margin-top: 5px; }
 #navigation a { color: #FFD; text-decoration: none; }
 #navigation a:hover { text-decoration: underline; }
 
 #content { background: #FFD; border-radius: 5px; color: #553; padding: 10px; margin-left: 200px; }
+#content.docs { max-width: 800px; padding: 20px; }
+#content.docs h1 { font-size: 30px; letter-spacing: -1px; }
+#content.docs h2 { font-size: 20px; margin: 15px 0px 5px 0px; }
+#content.docs li { list-style-type: none; }
 .item { background: #199; color: #FFD; float: left; font-size: 20px; margin: 10px; padding: 10px; width: 200px; border-radius: 5px; }
 .item a { color: #FFD; }
 .item a:hover { text-decoration: none; }
@@ -34,3 +43,5 @@ h1 { color: #199; font-size: 20px; margin-bottom: 5px; }
 #slider-explanation { margin-right: 330px; }
 #slider-wrap { float: right; margin: 10px; width: 300px; }
 #slider { font-size: 13px; }
+
+.highlight { background: #553; border-radius: 5px; color: #FFD; margin: 10px 0px; padding: 10px; }
