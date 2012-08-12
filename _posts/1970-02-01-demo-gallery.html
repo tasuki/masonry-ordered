@@ -76,15 +76,15 @@ $(document).ready(function(){
 	});
 
 	// numbers overlay
-	$('.pic').prepend(function() {
+	$('.pic').append(function() {
 		var title = $(this).find('img').attr('src').replace(/.*(\d\d).*/, '\$1');
 		return '<div style="position: absolute; left: 20px; top: 15px; ">'
 				+ title + '</div>';
 	})
-	.css('color', '#FFF')
+	.css('color', '#199')
 	.css('font-size', '30px')
 	.css('text-decoration', 'none')
-	.css('text-shadow', '#000 2px 2px 1px');
+	.css('text-shadow', '#999 2px 2px 1px');
 
 	$("#slider").slider({
 		value: 55,
