@@ -3,7 +3,10 @@
 
 body { background: #553; color: #FFD; font-family: Ubuntu, Helvetica, Arial, sans-serif; font-size: 16px; padding: 10px; }
 
-h1 { font-size: 20px; }
+h1 { font-size: 20px; margin-bottom: 5px; }
+.left { float: left; }
+.right { float: right; }
+.padmore { padding: 10px; }
 
 #navigation { position: absolute; width: 180px; }
 #navigation li { list-style-type: none; margin-top: 5px; }
@@ -25,4 +28,6 @@ h1 { font-size: 20px; }
 .pic { float: left; padding: 5px; position: relative; }
 .pic img { border: 5px solid #553; border-radius: 3px; display: block; }
 
-#slider { float: right; margin: 10px; width: 300px; font-size: 13px; }
+#slider-explanation { margin-right: 330px; }
+#slider-wrap { float: right; margin: 10px; width: 300px; }
+#slider { font-size: 13px; }

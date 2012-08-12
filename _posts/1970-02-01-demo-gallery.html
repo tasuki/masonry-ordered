@@ -3,10 +3,18 @@ layout: default
 title: "Demo: Photo gallery"
 ---
 
-<h1>jQuery Masonry Ordered demo: Photo Gallery</h1>
-<div id="slider"></div>
+<div class="padmore">
+	<h1>jQuery Masonry Ordered demo: Photo Gallery</h1>
+	<div id="slider-wrap">
+		<div class="left">Original Masonry</div>
+		<div class="right">Masonry Ordered</div>
+		<div id="slider" class="clear"></div>
+	</div>
+	<div id="slider-explanation">Play around with the slider on the right side. You can smoothly transition from the original Masonry layout strategy to the Masonry Ordered layout. (Try it on a large screen if you can!)
+	</div>
+</div>
 
-<div id="images">
+<div class="clear" id="images">
 	<div class="pic"><img src="../img/gallery/01-schiphol.jpg"></div>
 	<div class="pic"><img src="../img/gallery/02-manchester-airport.jpg"></div>
 	<div class="pic"><img src="../img/gallery/03-manchester-station.jpg"></div>
