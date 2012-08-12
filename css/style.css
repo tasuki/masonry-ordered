@@ -1,0 +1,28 @@
+* { margin: 0; padding: 0; }
+.clear { clear: both; }
+
+body { background: #553; color: #FFD; font-family: Ubuntu, Helvetica, Arial, sans-serif; font-size: 16px; padding: 10px; }
+
+h1 { font-size: 20px; }
+
+#navigation { position: absolute; width: 180px; }
+#navigation li { list-style-type: none; margin-top: 5px; }
+#navigation a { color: #FFD; text-decoration: none; }
+#navigation a:hover { text-decoration: underline; }
+
+#content { background: #FFD; border-radius: 5px; color: #553; padding: 10px; margin-left: 200px; }
+.item { background: #199; color: #FFD; float: left; font-size: 20px; margin: 10px; padding: 10px; width: 200px; border-radius: 5px; }
+.item a { color: #FFD; }
+.item a:hover { text-decoration: none; }
+.link { padding: 0px; }
+.link a { background: #D17; text-decoration: none; display: block; padding: 10px; border-radius: 5px; width: 200px; }
+.col2 { width: 440px; }
+.small-text { font-size: 16px; }
+
+.mason div { background: #FFD; color: #199; float: left; font-weight: bold; font-size: 30px; text-align: center; border-radius: 5px; margin: 5px; }
+
+#images { position: relative; }
+.pic { float: left; padding: 5px; position: relative; }
+.pic img { border: 5px solid #553; border-radius: 3px; display: block; }
+
+#slider { float: right; margin: 10px; width: 300px; font-size: 13px; }

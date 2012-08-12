@@ -1,0 +1,111 @@
+---
+title: jQuery Masonry Ordered
+layout: default
+category: home
+mini_bricks: 
+  - w: 9
+    h: 4
+  - w: 4
+    h: 6
+  - w: 4
+    h: 4
+  - w: 6
+    h: 4
+  - w: 4
+    h: 4
+  - w: 7
+    h: 4
+  - w: 4
+    h: 4
+  - w: 4
+    h: 6
+  - w: 4
+    h: 5
+  - w: 4
+    h: 4
+  - w: 4
+    h: 7
+  - w: 9
+    h: 4
+  - w: 4
+    h: 4
+---
+
+<div class="item col2">
+	Alternative layout strategy for <a href="http://masonry.desandro.com">jQuery Masonry</a><br/>
+	Keep the sequence of items in original order<br/>
+	<br/>
+	&larr; View docs and demos
+</div>
+
+<div class="item">
+	Before: Masonry
+	<div id="masonry" class="mason">
+		{% for brick in page.mini_bricks %}
+			<div style="width: {{ brick.w }}0px; height: {{ brick.h }}0px; line-height: {{ brick.h }}0px;">
+				{{ forloop.index }}
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+<div class="item">
+	After: Ordered
+	<div id="masonry-ordered" class="mason">
+		{% for brick in page.mini_bricks %}
+			<div style="width: {{ brick.w }}0px; height: {{ brick.h }}0px; line-height: {{ brick.h }}0px;">
+				{{ forloop.index }}
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+<div class="item small-text">
+	<h3>What?</h3>
+	David DeSandro's jQuery Masonry loops through the items
+	and places each as close to the top as possible.
+	<br/><br/>
+	JQuery Masonry Ordered tries to preserve the previous/next relationship
+	of the elements in the sequence.
+</div>
+
+<div class="item link"><a href="{{ root_path }}jquery.masonry.ordered.js">
+	<strong>Download</strong> the jquery.&#8203;masonry.&#8203;ordered.js script
+</a></div>
+<div class="item link"><a href="http://github.com/tasuk/masonry-ordered">
+	jQuery Masonry Ordered on <strong>github</strong>:<br/>
+	&ndash; browse the code<br/>
+	&ndash; submit bug reports<br/>
+	&ndash; fork &amp; contribute
+</a></div>
+
+<div class="item small-text">
+	<h3>Is there a tradeoff?</h3>
+	Yes, Masonry Ordered usually takes up visibly more vertical space.
+</div>
+
+<script>
+	$(document).ready(function(){
+		$('#masonry').masonry({
+			itemSelector: 'div',
+			columnWidth: 10,
+			layoutPriorities: {
+				shelfOrder: 0
+			}
+		});
+
+		$('#masonry-ordered').masonry({
+			itemSelector: 'div',
+			columnWidth: 10,
+			layoutPriorities: {
+				shelfOrder: 2
+			}
+		});
+
+		$('#content').masonry({
+			itemSelector: '.item',
+			isAnimated: true,
+			columnWidth: 240
+		});
+	});
+</script>

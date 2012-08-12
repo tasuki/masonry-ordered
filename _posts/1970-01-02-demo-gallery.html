@@ -1,0 +1,94 @@
+---
+layout: default
+title: "Demo: Photo gallery"
+---
+
+<h1>Masonry Ordered demo: Photo Gallery</h1>
+<div id="slider"></div>
+
+<div id="images">
+	<div class="pic"><img src="../img/gallery/01-schiphol.jpg"></div>
+	<div class="pic"><img src="../img/gallery/02-manchester-airport.jpg"></div>
+	<div class="pic"><img src="../img/gallery/03-manchester-station.jpg"></div>
+	<div class="pic"><img src="../img/gallery/04-cheap-trick.jpg"></div>
+	<div class="pic"><img src="../img/gallery/05-the-old-nags-head.jpg"></div>
+	<div class="pic"><img src="../img/gallery/06-roof-with-a-chimney.jpg"></div>
+	<div class="pic"><img src="../img/gallery/07-peak-district.jpg"></div>
+	<div class="pic"><img src="../img/gallery/08-stream.jpg"></div>
+	<div class="pic"><img src="../img/gallery/09-hills.jpg"></div>
+	<div class="pic"><img src="../img/gallery/10-a-discussion.jpg"></div>
+	<div class="pic"><img src="../img/gallery/11-a-photographer.jpg"></div>
+	<div class="pic"><img src="../img/gallery/12-a-ndrew.jpg"></div>
+	<div class="pic"><img src="../img/gallery/13-aaah-hills.jpg"></div>
+	<div class="pic"><img src="../img/gallery/14-windy-lunch.jpg"></div>
+	<div class="pic"><img src="../img/gallery/15-hang-over.jpg"></div>
+	<div class="pic"><img src="../img/gallery/16-kinder-peak.jpg"></div>
+	<div class="pic"><img src="../img/gallery/17-group-photo.jpg"></div>
+	<div class="pic"><img src="../img/gallery/18-open-space.jpg"></div>
+	<div class="pic"><img src="../img/gallery/19-moo.jpg"></div>
+	<div class="pic"><img src="../img/gallery/20-berries.jpg"></div>
+	<div class="pic"><img src="../img/gallery/21-headless.jpg"></div>
+	<div class="pic"><img src="../img/gallery/22-bzzzt.jpg"></div>
+	<div class="pic"><img src="../img/gallery/23-no-public-access.jpg"></div>
+	<div class="pic"><img src="../img/gallery/24-wait-for-it.jpg"></div>
+	<div class="pic"><img src="../img/gallery/25-train.jpg"></div>
+	<div class="pic"><img src="../img/gallery/26-braaains.jpg"></div>
+	<div class="pic"><img src="../img/gallery/27-sign.jpg"></div>
+	<div class="pic"><img src="../img/gallery/28-church.jpg"></div>
+	<div class="pic"><img src="../img/gallery/29-cathedral-of-york.jpg"></div>
+	<div class="pic"><img src="../img/gallery/30-semaphore.jpg"></div>
+	<div class="pic"><img src="../img/gallery/31-york-minster.jpg"></div>
+	<div class="pic"><img src="../img/gallery/32-chapter-house.jpg"></div>
+	<div class="pic"><img src="../img/gallery/33-predicamus-christum.jpg"></div>
+	<div class="pic"><img src="../img/gallery/34-old-ladies-at-the-entrance.jpg"></div>
+	<div class="pic"><img src="../img/gallery/35-gate.jpg"></div>
+	<div class="pic"><img src="../img/gallery/36-gym-bell-bus.jpg"></div>
+	<div class="pic"><img src="../img/gallery/37-ghost-of-isanka.jpg"></div>
+	<div class="pic"><img src="../img/gallery/38-shadows.jpg"></div>
+	<div class="pic"><img src="../img/gallery/39-moar.jpg"></div>
+	<div class="pic"><img src="../img/gallery/40-sky-on-fire.jpg"></div>
+	<div class="pic"><img src="../img/gallery/41-down-the-stairs.jpg"></div>
+	<div class="pic"><img src="../img/gallery/42-inside-out.jpg"></div>
+	<div class="pic"><img src="../img/gallery/43-live-music.jpg"></div>
+	<div class="pic"><img src="../img/gallery/44-good-morning-rotterdam.jpg"></div>
+	<div class="clear"></div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#images').imagesLoaded(function() {
+		this.masonry({
+			itemSelector: '.pic',
+			columnWidth: 20,
+			isAnimated: true,
+			layoutPriorities: {
+				shelfOrder: 1.21
+			}
+		});
+	});
+
+	// numbers overlay
+	$('.pic').prepend(function() {
+		var title = $(this).find('img').attr('src').replace(/.*(\d\d).*/, '\$1');
+		return '<div style="position: absolute; left: 20px; top: 15px; ">'
+				+ title + '</div>';
+	})
+	.css('color', '#FFF')
+	.css('font-size', '30px')
+	.css('text-decoration', 'none')
+	.css('text-shadow', '#000 2px 2px 1px');
+
+	$("#slider").slider({
+		value: 55,
+		step: 5,
+
+		slide: function(event, ui) {
+			$('#images').masonry({
+				layoutPriorities: {
+					shelfOrder: Math.pow((ui.value / 50), 2)
+				}
+			});
+		}
+	});
+});
+</script>
