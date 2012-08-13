@@ -44,6 +44,8 @@ p { margin: 5px 0px; }
 #slider-wrap { float: right; margin: 10px; width: 300px; }
 #slider { font-size: 13px; }
 
-.highlight { background: #553; border-radius: 5px; color: #FFD; margin: 10px 0px; padding: 10px; }
+.highlight, code { background: #553; border-radius: 5px; color: #FFD;  }
+.highlight { margin: 10px 0px; padding: 10px; }
+p code { padding: 1px 5px; }
 
 #by { margin: 5px 5px 5px 220px; color: #AA7; font-style: italic; }
