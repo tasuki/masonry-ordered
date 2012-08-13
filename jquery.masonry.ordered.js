@@ -1,5 +1,5 @@
 /**
- * jQuery Masonry Ordered
+ * jQuery Masonry Ordered 2.1-beta
  * http://masonry-ordered.tasuki.org/
  *
  * Enhanced layout strategy for jQuery Masonry:

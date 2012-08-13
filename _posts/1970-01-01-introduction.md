@@ -25,6 +25,12 @@ The repository of jQuery Masonry Sorted is at [github.com/tasuk/masonry-ordered]
 - [David DeSandro](http://desandro.com/) for the amazing [jQuery Masonry](http://masonry.desandro.com/)
 - [John Resig](http://ejohn.org/) for creating [jQuery](http://jquery.com/)
 
+## Changelog
+
+The major.minor version numbers signify compatibility with jQuery Masonry. The part after the dash signifies changes within jQuery Masonry Ordered.
+
+**v2.1-beta**, *Feb 2012* -- initial release
+
 ## License
 JQuery Masonry Sorted is provided under the MIT license:
 
