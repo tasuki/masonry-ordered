@@ -9,7 +9,7 @@ In case you haven't, you should start by reading the [introduction to jQuery Mas
 
 ## Getting started -- markup
 
-The only difference is that after including jQuery and Masonry, you need to include Masonry Sorted:
+The only difference is that after including jQuery and Masonry, you need to include Masonry Ordered:
 
 {% highlight html %}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
@@ -19,7 +19,7 @@ The only difference is that after including jQuery and Masonry, you need to incl
 
 ## Repository / development
 
-The repository of jQuery Masonry Sorted is at [github.com/tasuk/masonry-ordered](http://github.com/tasuk/masonry-ordered). There you can find the newest version, submit bug reports, or help with development.
+The repository of jQuery Masonry Ordered is at [github.com/tasuk/masonry-ordered](http://github.com/tasuk/masonry-ordered). There you can find the newest version, submit bug reports, or help with development.
 
 ## Thanks to:
 - [David DeSandro](http://desandro.com/) for the amazing [jQuery Masonry](http://masonry.desandro.com/)
@@ -32,7 +32,7 @@ The major.minor version numbers signify compatibility with jQuery Masonry. The p
 **v2.1-beta**, *Feb 2012* -- initial release
 
 ## License
-JQuery Masonry Sorted is provided under the MIT license:
+JQuery Masonry Ordered is provided under the MIT license:
 
 > Copyright &copy; 2012 Vit 'tasuki' Brunner
 >
