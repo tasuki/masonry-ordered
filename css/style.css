@@ -45,3 +45,5 @@ p { margin: 5px 0px; }
 #slider { font-size: 13px; }
 
 .highlight { background: #553; border-radius: 5px; color: #FFD; margin: 10px 0px; padding: 10px; }
+
+#by { margin: 5px 5px 5px 220px; color: #AA7; font-style: italic; }
