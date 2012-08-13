@@ -19,9 +19,9 @@ p { margin: 5px 0px; }
 #navigation a:hover { text-decoration: underline; }
 
 #content { background: #FFD; border-radius: 5px; color: #553; padding: 10px; margin-left: 200px; }
+#content h1 { font-size: 30px; text-shadow: #CC9 1px 1px 1px; letter-spacing: -1px; }
 #content.docs { max-width: 800px; padding: 20px; }
-#content.docs h1 { font-size: 30px; letter-spacing: -1px; }
-#content.docs h2 { font-size: 20px; margin: 15px 0px 5px 0px; }
+#content.docs h2 { font-size: 20px; text-shadow: #DDA 1px 1px 1px; margin: 15px 0px 5px 0px; }
 #content.docs li { list-style-type: none; }
 .item { background: #199; color: #FFD; float: left; font-size: 20px; margin: 10px; padding: 10px; width: 200px; border-radius: 5px; }
 .item a { color: #FFD; }
