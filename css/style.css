@@ -1,6 +1,7 @@
 * { margin: 0; padding: 0; }
 .clear { clear: both; }
 
+html { overflow-y: scroll; }
 body { background: #553; color: #FFD; font-family: Ubuntu, Helvetica, Arial, sans-serif; font-size: 16px; padding: 10px; }
 a { color: #D17; }
 a:hover { text-decoration: none; }
