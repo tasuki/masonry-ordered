@@ -2,7 +2,7 @@
 .clear { clear: both; }
 
 html { overflow-y: scroll; }
-body { background: #553; color: #FFD; font-family: Ubuntu, Helvetica, Arial, sans-serif; font-size: 16px; padding: 10px; }
+body { background: #553; color: #FFD; font-family: Ubuntu, sans-serif; font-size: 16px; padding: 10px; }
 a { color: #D17; }
 a:hover { text-decoration: none; }
 
@@ -49,5 +49,6 @@ p { margin: 5px 0px; }
 .highlight, code { background: #553; border-radius: 5px; color: #FFD;  }
 .highlight { margin: 10px 0px; padding: 10px; }
 p code { padding: 1px 5px; }
+code { font-family: "Ubuntu Mono"; }
 
 #by { margin: 5px 5px 5px 220px; color: #AA7; font-style: italic; }
