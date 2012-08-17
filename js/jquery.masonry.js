@@ -1,14 +1,19 @@
 /**
- * jQuery Masonry v2.1.01
+ * jQuery Masonry v2.1.05
  * A dynamic layout plugin for jQuery
  * The flip-side of CSS Floats
  * http://masonry.desandro.com
  *
  * Licensed under the MIT license.
- * Copyright 2011 David DeSandro
+ * Copyright 2012 David DeSandro
  */
- 
+
+/*jshint browser: true, curly: true, eqeqeq: true, forin: false, immed: false, newcap: true, noempty: true, strict: true, undef: true */
+/*global jQuery: false */
+
 (function( window, $, undefined ){
+
+  'use strict';
 
   /*
    * smartresize: debounced resize event for jQuery
@@ -40,7 +45,7 @@
 
       if ( resizeTimeout ) { clearTimeout( resizeTimeout ); }
       resizeTimeout = setTimeout(function() {
-        jQuery.event.handle.apply( context, args );
+        $.event.handle.apply( context, args );
       }, execAsap === "execAsap"? 0 : 100 );
     }
   };
@@ -61,10 +66,7 @@
     this._create( options );
     this._init();
   };
-  
-  // styles of container element we want to keep track of
-  var masonryContainerStyles = [ 'position', 'height' ];
-  
+
   $.Mason.settings = {
     isResizable: true,
     isAnimated: false,
@@ -74,7 +76,10 @@
     },
     gutterWidth: 0,
     isRTL: false,
-    isFitWidth: false
+    isFitWidth: false,
+    containerStyle: {
+      position: 'relative'
+    }
   };
 
   $.Mason.prototype = {
@@ -97,24 +102,22 @@
     _create : function( options ) {
       
       this.options = $.extend( true, {}, $.Mason.settings, options );
-      
       this.styleQueue = [];
-      // need to get bricks
-      this.reloadItems();
-
 
       // get original styles in case we re-apply them in .destroy()
       var elemStyle = this.element[0].style;
-      this.originalStyle = {};
-      for ( var i=0, len = masonryContainerStyles.length; i < len; i++ ) {
-        var prop = masonryContainerStyles[i];
+      this.originalStyle = {
+        // get height
+        height: elemStyle.height || ''
+      };
+      // get other styles that will be overwritten
+      var containerStyle = this.options.containerStyle;
+      for ( var prop in containerStyle ) {
         this.originalStyle[ prop ] = elemStyle[ prop ] || '';
       }
 
-      this.element.css({
-        position : 'relative'
-      });
-      
+      this.element.css( containerStyle );
+
       this.horizontalDirection = this.options.isRTL ? 'right' : 'left';
 
       this.offset = {
@@ -136,7 +139,11 @@
           instance.resize();
         });
       }
-      
+
+
+      // need to get bricks
+      this.reloadItems();
+
     },
   
     // _init fires when instance is first created
@@ -169,8 +176,8 @@
       var containerSize = {};
       containerSize.height = Math.max.apply( Math, this.colYs );
       if ( this.options.isFitWidth ) {
-        var unusedCols = 0,
-            i = this.cols;
+        var unusedCols = 0;
+        i = this.cols;
         // count unused columns
         while ( --i ) {
           if ( this.colYs[i] !== 0 ) {
@@ -236,13 +243,12 @@
           colSpan, groupCount, groupY, groupColY, j;
 
       //how many columns does this brick span
-      colSpan = Math.ceil( $brick.outerWidth(true) /
-        ( this.columnWidth + this.options.gutterWidth ) );
+      colSpan = Math.ceil( $brick.outerWidth(true) / this.columnWidth );
       colSpan = Math.min( colSpan, this.cols );
 
       if ( colSpan === 1 ) {
         // if brick spans only one column, just like singleMode
-        groupY = this.colYs
+        groupY = this.colYs;
       } else {
         // brick spans more than one column
         // how many different places could this brick fit horizontally
@@ -365,11 +371,10 @@
       
       // re-apply saved container styles
       var elemStyle = this.element[0].style;
-      for ( var i=0, len = masonryContainerStyles.length; i < len; i++ ) {
-        var prop = masonryContainerStyles[i];
+      for ( var prop in this.originalStyle ) {
         elemStyle[ prop ] = this.originalStyle[ prop ];
       }
-      
+
       this.element
         .unbind('.masonry')
         .removeClass('masonry')
@@ -413,8 +418,9 @@
     }
 
     function imgLoaded( event ) {
-      if ( event.target.src !== blank && $.inArray( this, loaded ) === -1 ){
-        loaded.push(this);
+      var img = event.target;
+      if ( img.src !== blank && $.inArray( img, loaded ) === -1 ){
+        loaded.push( img );
         if ( --len <= 0 ){
           setTimeout( triggerCallback );
           $images.unbind( '.imagesLoaded', imgLoaded );
@@ -443,8 +449,8 @@
   // helper function for logging errors
   // $.error breaks jQuery chaining
   var logError = function( message ) {
-    if ( this.console ) {
-      console.error( message );
+    if ( window.console ) {
+      window.console.error( message );
     }
   };
   
