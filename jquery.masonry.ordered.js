@@ -1,5 +1,5 @@
 /**
- * jQuery Masonry Ordered 2.1-beta
+ * jQuery Masonry Ordered 2.1-beta2
  * http://masonry-ordered.tasuki.org/
  *
  * Enhanced layout strategy for jQuery Masonry:
@@ -64,7 +64,8 @@
     var prevBrick = this.styleQueue.slice(-1)[0];
     if ( prevBrick != undefined ) {
       var width  = prevBrick.$el.outerWidth(true);
-      var offset = prevBrick.style[ dir ];
+      // subtract container's horizontal offset to prevent overflow
+      var offset = prevBrick.style[ dir ] - this.offset.x;
 
       // align anchor point with previous brick
       anchorPoint[ dir ] = offset + width;

@@ -29,7 +29,8 @@ The repository of jQuery Masonry Ordered is at [github.com/tasuk/masonry-ordered
 
 The major.minor version numbers signify compatibility with jQuery Masonry. The part after the dash signifies changes within jQuery Masonry Ordered.
 
-**v2.1-beta**, *Feb 2012* -- initial release
+**v2.1-beta2**, *Aug 2012* -- fix bricks wrapping too early  
+**v2.1-beta**, *Feb 2012* -- initial release  
 
 ## License
 JQuery Masonry Ordered is provided under the MIT license:
