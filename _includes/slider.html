@@ -1,0 +1,22 @@
+	<div id="slider-wrap">
+		<div class="left">Original Masonry</div>
+		<div class="right">Masonry Ordered</div>
+		<div id="slider" class="clear"></div>
+	</div>
+	<div id="slider-explanation">
+		Play around with the slider on the right side. You can smoothly transition from the original Masonry layout strategy to the Masonry Ordered layout. (Try it on a large screen if you can!)
+	</div>
+
+	<script type="text/javascript">
+		$("#slider").slider({
+			value: 55,
+			step: 5,
+			slide: function(event, ui) {
+				$('#images').masonry({
+					layoutPriorities: {
+						shelfOrder: Math.pow((ui.value / 50), 2)
+					}
+				});
+			}
+		});
+	</script>
