@@ -52,3 +52,4 @@ p code { padding: 1px 5px; }
 code { font-family: "Ubuntu Mono"; }
 
 #by { margin: 5px 5px 5px 220px; color: #AA7; font-style: italic; }
+#by a { color: #AA7; }
