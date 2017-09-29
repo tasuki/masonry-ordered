@@ -19,7 +19,7 @@ The only difference is that after including jQuery and Masonry, you need to incl
 
 ## Repository / development
 
-The repository of jQuery Masonry Ordered is at [github.com/tasuk/masonry-ordered](http://github.com/tasuk/masonry-ordered). There you can find the newest version, submit bug reports, or help with development.
+The repository of jQuery Masonry Ordered is at [github.com/tasuki/masonry-ordered](http://github.com/tasuki/masonry-ordered). There you can find the newest version, submit bug reports, or help with development.
 
 ## Thanks to:
 - [David DeSandro](http://desandro.com/) for the amazing [jQuery Masonry](http://masonry.desandro.com/)

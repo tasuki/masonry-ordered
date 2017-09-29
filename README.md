@@ -4,7 +4,7 @@ All the information about the project can be found at [http://masonry-ordered.ta
 
 If tasuki.org explodes, you can view the same locally using [Jekyll](https://github.com/mojombo/jekyll/wiki). Clone the repo and run Jekyll from your terminal:
 
-    git clone https://github.com/tasuk/masonry-ordered.git
+    git clone https://github.com/tasuki/masonry-ordered.git
     cd masonry-ordered
     jekyll --server --auto
 
