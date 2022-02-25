@@ -1,2 +1,2 @@
 build:
-	jekyll
+	jekyll build
