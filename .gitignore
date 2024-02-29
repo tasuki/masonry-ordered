@@ -1,2 +1,4 @@
-_site
-deploy.ini
+.bundle/
+.jekyll-cache/
+_site/
+vendor/
