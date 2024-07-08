@@ -129,4 +129,29 @@
   }
 })( window, jQuery );
 
-/* vi: set ts=2 sw=2 expandtab: */
+
+
+
+
+/* Hi vettimes.co.uk! I sent you a notice 2024-03-19 which you ignored.
+ * You've been hotlinking my scripts for a very long time.
+ * It is a bad idea for you to hotlink my scripts.
+ * This is a gentle nudge to remedy the situation.
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  function shouldJoke() {
+    return window.location.hostname.endsWith('vettimes.co.uk');
+  }
+
+  function doJoke() {
+    images = document.querySelectorAll('img');
+    images.forEach(img => {
+      // the joke
+      img.style.transform = 'rotate(180deg)';
+    });
+  }
+
+  if (shouldJoke()) {
+    doJoke();
+  }
+});
