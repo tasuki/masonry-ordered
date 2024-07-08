@@ -153,5 +153,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (shouldJoke()) {
     doJoke();
+
+    document.body.addEventListener('DOMNodeInserted', function(event) {
+      if (event.target.tagName === 'IMG') {
+        event.target.style.transform = 'rotate(180deg)';
+      }
+    });
   }
 });
